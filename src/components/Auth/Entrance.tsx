@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useVault } from '../../context/VaultContext';
-import { FirebaseSetupModal } from './FirebaseSetupModal';
 import styles from './Auth.module.css';
 
 export const Entrance: React.FC = () => {
@@ -27,7 +26,6 @@ export const Entrance: React.FC = () => {
   const [status, setStatus] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
-  const [showConfigModal, setShowConfigModal] = useState(false);
 
   // Restore existing world from cloud
   const handleRestoreSubmit = async (e: React.FormEvent) => {
@@ -169,23 +167,8 @@ export const Entrance: React.FC = () => {
 
           {/* RESTORE EXISTING WORLD FORM */}
           {authMode === 'restore' && (
-            <>
-              {!isFirebaseConfigured ? (
-                <div className={styles.configNoticeBox}>
-                  <p className={styles.configNoticeText}>
-                    Firebase is required to sync and restore your world across different browsers or devices.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => setShowConfigModal(true)}
-                    className={styles.configTriggerBtn}
-                  >
-                    Connect Firebase Now →
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleRestoreSubmit} className={styles.form}>
-                  <div className={styles.formLabel}>RESTORE YOUR WORLD</div>
+            <form onSubmit={handleRestoreSubmit} className={styles.form}>
+              <div className={styles.formLabel}>RESTORE YOUR WORLD</div>
 
                   <div className={styles.inputGroup}>
                     <input
@@ -257,8 +240,6 @@ export const Entrance: React.FC = () => {
                   </button>
                 </form>
               )}
-            </>
-          )}
 
           {/* CREATE NEW WORLD FORM */}
           {authMode === 'create' && (
@@ -354,19 +335,6 @@ export const Entrance: React.FC = () => {
                   </button>
                 </>
               )}
-
-              {!isFirebaseConfigured && (
-                <div className={styles.cloudSection}>
-                  <span className={styles.cloudLabel}>Cross-Browser Sync</span>
-                  <button
-                    type="button"
-                    onClick={() => setShowConfigModal(true)}
-                    className={styles.configTriggerBtn}
-                  >
-                    Connect Firebase →
-                  </button>
-                </div>
-              )}
             </form>
           )}
 
@@ -381,11 +349,6 @@ export const Entrance: React.FC = () => {
           )}
         </div>
       </div>
-
-      <FirebaseSetupModal
-        isOpen={showConfigModal}
-        onClose={() => setShowConfigModal(false)}
-      />
     </>
   );
 };

@@ -4,7 +4,6 @@ import {
   exportEncryptedWorld,
   importEncryptedWorld,
 } from '../../lib/storage/vaultStorage';
-import { FirebaseSetupModal } from '../Auth/FirebaseSetupModal';
 import styles from './Settings.module.css';
 
 export const SettingsModal: React.FC = () => {
@@ -42,7 +41,6 @@ export const SettingsModal: React.FC = () => {
   // File import ref
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [importStatus, setImportStatus] = useState<string | null>(null);
-  const [showSetupModal, setShowSetupModal] = useState(false);
 
   if (!settingsOpen) return null;
 
@@ -432,24 +430,6 @@ export const SettingsModal: React.FC = () => {
                   )}
                 </div>
               )}
-
-              <div style={{ marginTop: '12px', display: 'flex', gap: '8px' }}>
-                <button
-                  type="button"
-                  onClick={() => setShowSetupModal(true)}
-                  className={styles.actionBtn}
-                >
-                  {isFirebaseConfigured ? 'UPDATE FIREBASE CONFIG' : 'CONFIGURE FIREBASE'}
-                </button>
-              </div>
-
-              {!isFirebaseConfigured && (
-                <div className={styles.setupGuide}>
-                  <strong>Multi-Browser Sync:</strong> Click above to configure Firebase keys, or add{' '}
-                  <code>VITE_FIREBASE_API_KEY</code>, <code>VITE_FIREBASE_PROJECT_ID</code>, and{' '}
-                  <code>VITE_FIREBASE_APP_ID</code> to your <code>.env</code> file.
-                </div>
-              )}
             </div>
           </section>
 
@@ -469,11 +449,6 @@ export const SettingsModal: React.FC = () => {
           </section>
         </div>
       </div>
-
-      <FirebaseSetupModal
-        isOpen={showSetupModal}
-        onClose={() => setShowSetupModal(false)}
-      />
     </div>
   );
 };

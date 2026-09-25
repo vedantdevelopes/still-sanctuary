@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useVault } from '../../context/VaultContext';
-import { FirebaseSetupModal } from './FirebaseSetupModal';
 import styles from './Auth.module.css';
 
 export const LockScreen: React.FC = () => {
@@ -17,7 +16,6 @@ export const LockScreen: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
-  const [showConfigModal, setShowConfigModal] = useState(false);
 
   // Email sign in toggler on lock screen if not signed in
   const [showEmailSignIn, setShowEmailSignIn] = useState(false);
@@ -109,7 +107,7 @@ export const LockScreen: React.FC = () => {
             </button>
           </form>
 
-          {isFirebaseConfigured ? (
+          {isFirebaseConfigured && (
             <div className={styles.cloudSection}>
               {!firebaseUser ? (
                 <>
@@ -182,25 +180,9 @@ export const LockScreen: React.FC = () => {
                 </button>
               )}
             </div>
-          ) : (
-            <div className={styles.cloudSection}>
-              <span className={styles.cloudLabel}>Cross-Browser Sync</span>
-              <button
-                type="button"
-                onClick={() => setShowConfigModal(true)}
-                className={styles.configTriggerBtn}
-              >
-                Connect Firebase →
-              </button>
-            </div>
           )}
         </div>
       </div>
-
-      <FirebaseSetupModal
-        isOpen={showConfigModal}
-        onClose={() => setShowConfigModal(false)}
-      />
     </>
   );
 };
