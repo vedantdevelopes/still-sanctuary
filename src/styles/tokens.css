@@ -1,0 +1,94 @@
+:root {
+  /* Fonts */
+  --font-editorial: 'Instrument Serif', 'Cormorant Garamond', Georgia, serif;
+  --font-serif-secondary: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Typography Scales */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.84rem;     /* 13.5px */
+  --text-base: 0.95rem;   /* 15.2px */
+  --text-lg: 1.15rem;     /* 18.4px */
+  --text-xl: 1.4rem;      /* 22.4px */
+  --text-2xl: 1.85rem;    /* 29.6px */
+  --text-3xl: 2.5rem;     /* 40px */
+  --text-4xl: 3.5rem;     /* 56px */
+  --text-display: 4.8rem; /* 76.8px */
+
+  /* Spacing */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+  --space-xl: 3.5rem;
+  --space-2xl: 5.5rem;
+  --space-3xl: 8rem;
+
+  /* Transitions & Timing */
+  --ease-natural: cubic-bezier(0.25, 0.1, 0.25, 1.0);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-gentle: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-micro: 180ms;
+  --duration-macro: 500ms;
+  --duration-entrance: 2200ms;
+}
+
+/* Dark Theme (Default) - Nocturne Sanctuary */
+[data-theme='dark'],
+:root:not([data-theme='light']) {
+  --color-bg-base: #08090b;
+  --color-bg-void: #101114;
+  --color-bg-elevation: #18191d;
+  --color-bg-elevation-translucent: rgba(24, 25, 29, 0.75);
+  --color-bg-highlight: rgba(244, 242, 235, 0.04);
+  --color-bg-hover: rgba(244, 242, 235, 0.06);
+
+  --color-text-primary: #f4f2eb;   /* Pearl Pure */
+  --color-text-secondary: #dcd7ce; /* Pearl Muted */
+  --color-text-muted: #8e8b83;     /* Ash Silver */
+  --color-text-faint: #56544e;     /* Deep Slate */
+
+  --color-accent-amber: #c9a96e;
+  --color-accent-amber-glow: rgba(201, 169, 110, 0.14);
+  --color-accent-amber-subtle: rgba(201, 169, 110, 0.08);
+
+  --color-border-subtle: rgba(244, 242, 235, 0.06);
+  --color-border-medium: rgba(244, 242, 235, 0.12);
+  --color-border-focus: rgba(201, 169, 110, 0.45);
+
+  --color-canvas-particle: 244, 242, 235;
+  --color-canvas-amber: 201, 169, 110;
+  --color-horizon-beam: radial-gradient(ellipse 70% 28% at 50% 100%, rgba(201, 169, 110, 0.09) 0%, rgba(16, 17, 20, 0) 80%);
+
+  --grain-opacity: 0.038;
+}
+
+/* Light Theme - Paper Morning */
+[data-theme='light'] {
+  --color-bg-base: #f9f8f4;
+  --color-bg-void: #f1ede5;
+  --color-bg-elevation: #e6e1d6;
+  --color-bg-elevation-translucent: rgba(249, 248, 244, 0.88);
+  --color-bg-highlight: rgba(30, 28, 25, 0.03);
+  --color-bg-hover: rgba(30, 28, 25, 0.05);
+
+  --color-text-primary: #1e1d1b;
+  --color-text-secondary: #403e39;
+  --color-text-muted: #78746c;
+  --color-text-faint: #aba69c;
+
+  --color-accent-amber: #aa8540;
+  --color-accent-amber-glow: rgba(170, 133, 64, 0.15);
+  --color-accent-amber-subtle: rgba(170, 133, 64, 0.08);
+
+  --color-border-subtle: rgba(30, 28, 25, 0.07);
+  --color-border-medium: rgba(30, 28, 25, 0.14);
+  --color-border-focus: rgba(170, 133, 64, 0.5);
+
+  --color-canvas-particle: 45, 42, 38;
+  --color-canvas-amber: 170, 133, 64;
+  --color-horizon-beam: radial-gradient(ellipse 70% 28% at 50% 100%, rgba(170, 133, 64, 0.08) 0%, rgba(241, 237, 229, 0) 80%);
+
+  --grain-opacity: 0.025;
+}

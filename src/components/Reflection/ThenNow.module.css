@@ -1,0 +1,124 @@
+.container {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+  animation: fadeIn var(--duration-macro) var(--ease-natural);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.title {
+  font-family: var(--font-editorial);
+  font-size: var(--text-3xl);
+  letter-spacing: 0.18em;
+  text-indent: 0.18em;
+  color: var(--color-text-primary);
+  font-weight: 300;
+  margin-bottom: var(--space-2xs);
+}
+
+.subtitle {
+  font-family: var(--font-serif-secondary);
+  font-size: var(--text-sm);
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.splitComparison {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: var(--space-xl);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.columnHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.columnTag {
+  font-size: var(--text-xs);
+  letter-spacing: 0.24em;
+  color: var(--color-accent-amber);
+  font-weight: 500;
+}
+
+.momentSelect {
+  background: var(--color-bg-elevation);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  max-width: 220px;
+  outline: none;
+}
+
+.momentCard {
+  background: var(--color-bg-elevation-translucent);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardTimestamp {
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.prose {
+  font-family: var(--font-editorial);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--color-text-primary);
+  white-space: pre-wrap;
+  flex: 1;
+}
+
+.emotions {
+  font-family: var(--font-serif-secondary);
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--color-accent-amber);
+  margin-top: var(--space-lg);
+}
+
+.dividerLine {
+  background: var(--color-border-subtle);
+  width: 1px;
+  height: 100%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .splitComparison {
+    grid-template-columns: 1fr;
+  }
+  .dividerLine {
+    display: none;
+  }
+}

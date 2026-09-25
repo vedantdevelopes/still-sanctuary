@@ -1,0 +1,403 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 180;
+  background: rgba(8, 9, 11, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  animation: fadeIn var(--duration-micro) var(--ease-natural);
+}
+
+.modal {
+  background: var(--color-bg-elevation);
+  border: 1px solid var(--color-border-medium);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 620px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.modalTitle {
+  font-family: var(--font-editorial);
+  font-size: var(--text-xl);
+  letter-spacing: 0.14em;
+  color: var(--color-text-primary);
+  font-weight: 300;
+}
+
+.closeBtn {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  transition: color var(--duration-micro) var(--ease-natural);
+}
+
+.closeBtn:hover {
+  color: var(--color-text-primary);
+}
+
+.modalBody {
+  padding: var(--space-lg);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sectionHeader {
+  font-size: var(--text-xs);
+  letter-spacing: 0.22em;
+  color: var(--color-text-faint);
+  text-transform: uppercase;
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.settingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.settingName {
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+
+.settingDesc {
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  max-width: 340px;
+}
+
+.selectInput {
+  background: var(--color-bg-elevation-translucent);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  outline: none;
+}
+
+.actionBtn {
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-subtle);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: var(--color-bg-highlight);
+  transition: all var(--duration-micro) var(--ease-natural);
+}
+
+.actionBtn:hover {
+  border-color: var(--color-border-medium);
+  color: var(--color-text-primary);
+}
+
+.lockNowBtn {
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  color: var(--color-accent-amber);
+  border: 1px solid var(--color-border-focus);
+  padding: 4px 14px;
+  border-radius: 9999px;
+  background: var(--color-accent-amber-subtle);
+  transition: all var(--duration-micro) var(--ease-natural);
+}
+
+.lockNowBtn:hover {
+  background: var(--color-accent-amber-glow);
+}
+
+.themePills {
+  display: flex;
+  gap: 4px;
+}
+
+.themePill {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border-subtle);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  transition: all var(--duration-micro) var(--ease-natural);
+}
+
+.selectedTheme {
+  color: var(--color-accent-amber);
+  border-color: var(--color-border-focus);
+  background: var(--color-accent-amber-subtle);
+}
+
+.checkboxInput {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-accent-amber);
+}
+
+.deletePromptBtn {
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  color: #ff7777;
+  border: 1px solid rgba(255, 119, 119, 0.3);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  transition: all var(--duration-micro) var(--ease-natural);
+}
+
+.deletePromptBtn:hover {
+  background: rgba(255, 119, 119, 0.12);
+}
+
+.deleteConfirmGroup {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.dangerBtn {
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  background: #bb3333;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+.pwForm {
+  background: var(--color-bg-highlight);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 8px;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.pwInput {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  padding: 4px 0;
+  outline: none;
+}
+
+.pwInput:focus {
+  border-bottom-color: var(--color-border-focus);
+}
+
+.pwError {
+  font-size: 0.75rem;
+  color: #ff8888;
+  font-style: italic;
+}
+
+.pwSuccess {
+  font-size: 0.75rem;
+  color: var(--color-accent-amber);
+}
+
+.saveKeyBtn {
+  align-self: flex-end;
+  margin-top: var(--space-xs);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  color: var(--color-accent-amber);
+  border: 1px solid var(--color-border-focus);
+  padding: 4px 14px;
+  border-radius: 9999px;
+}
+
+.statusNotice {
+  font-size: 0.75rem;
+  color: var(--color-accent-amber);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.privacyBox {
+  background: var(--color-bg-highlight);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 8px;
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.privacyTitle {
+  font-family: var(--font-editorial);
+  font-size: var(--text-sm);
+  letter-spacing: 0.2em;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.privacyText {
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Cloud / Firebase Section */
+.cloudBox {
+  background: var(--color-bg-highlight);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 10px;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.cloudStatusHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cloudBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-elevation-translucent);
+  color: var(--color-text-secondary);
+}
+
+.cloudDotActive {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 6px rgba(74, 222, 128, 0.6);
+}
+
+.cloudDotIdle {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-amber);
+  box-shadow: 0 0 6px var(--color-accent-amber);
+}
+
+.cloudDotOffline {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-text-faint);
+}
+
+.cloudDetails {
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.cloudActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+  margin-top: var(--space-2xs);
+}
+
+.syncNowBtn {
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-medium);
+  padding: 4px 14px;
+  border-radius: 9999px;
+  background: var(--color-bg-elevation);
+  cursor: pointer;
+  transition: all var(--duration-micro) var(--ease-natural);
+}
+
+.syncNowBtn:hover:not(:disabled) {
+  border-color: var(--color-accent-amber);
+  color: var(--color-accent-amber);
+  background: var(--color-bg-hover);
+}
+
+.syncNowBtn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.googleSettingsBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-subtle);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: var(--color-bg-elevation-translucent);
+  cursor: pointer;
+  transition: all var(--duration-micro) var(--ease-natural);
+}
+
+.googleSettingsBtn:hover {
+  border-color: var(--color-border-medium);
+  color: var(--color-text-primary);
+}
+
+.googleIconSmall {
+  width: 13px;
+  height: 13px;
+}
+
+.setupGuide {
+  background: var(--color-bg-elevation-translucent);
+  border: 1px dashed var(--color-border-subtle);
+  border-radius: 8px;
+  padding: var(--space-sm);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.setupGuide code {
+  color: var(--color-accent-amber);
+  font-family: monospace;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
